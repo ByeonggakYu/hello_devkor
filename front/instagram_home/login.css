@@ -1,0 +1,71 @@
+.container {
+    width: 350px;
+    height: 566.3px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border: 1px solid #DBDBDB;
+}
+img.logo_instagram {
+    align-self: center;
+    width: 175px;
+    margin: 25px;  /*이부분은 수정이 필요할수도 */
+}
+.input_login {
+    width: 270px;
+    height: 40px;
+    margin: 7px auto;
+    padding: 0 10px;
+    display: block;
+    background-color: #fafafa;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    font-size: 15px;
+}
+#btn_login {
+    width: 291px;
+    height: 30px;
+    margin: 13px auto;
+    background-color: #0095f6;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+#btn_login:disabled {
+    background-color: #B9DFFC;
+}
+#btn_login::disabled:hover {
+    cursor: default;
+}
+#btn_login:enabled:hover {
+    cursor: pointer;
+}
+#btn_login:focus {
+    outline: none;
+}
+
+.facebook_login {
+    color: #013569;
+    align-self: center;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.button_forgot {
+    color: #00366B;
+    align-self: center;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+img.art {
+    align-self: center;
+    width: 180px;
+    height: 40;
+    margin-top: 10px;  
+}
