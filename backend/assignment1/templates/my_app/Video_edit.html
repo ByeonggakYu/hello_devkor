@@ -1,0 +1,14 @@
+{% if edit_video %}
+<body>
+    <h1>Video Edit<h1>
+    <form action='/my_app/{{ edit_video.id }}/update/', method='POST'>
+        {% csrf_token %}
+        <input type ="text" name="subject" value="subject input"/>
+        <input type="text" name="content" value="text input"/>
+        <input type="submit" value="OK">
+    </form>
+</body>
+{% else %}
+    <p> 존재하지 않는 비디오입니다. </p>
+{% endif %}
+

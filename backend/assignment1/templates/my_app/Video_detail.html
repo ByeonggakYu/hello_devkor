@@ -1,0 +1,14 @@
+{% if OneVideo %}
+<body>
+    <h1>Video Detail</h1>
+    <h2>Subject : </h2>
+    <p>Content : <p>
+    <a href="/my_app/">List</a>
+    <a href="/my_app/{{ OneVideo.pk }}/edit/">Edit</a>
+    <a href="/my_app/{{ OneVideo.pk }}/delete/">Delete</a>
+    <a href="/my_app/{{ OneVideo.pk}}/get/">GET INFO</a>
+</body>
+
+{% else %}
+    <p> 존재하지 않는 비디오입니다.</p>
+{% endif %}
