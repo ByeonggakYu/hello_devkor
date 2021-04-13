@@ -4,7 +4,7 @@
     <h2>Subject : </h2>
     <p>Content : <p>
     <a href="/my_app/">List</a>
-    <a href="/my_app/{{ OneVideo.pk }}/edit/">Edit</a>
+    <a href="{% url 'edit' OneVideo.pk %}">Edit</a>
     <a href="/my_app/{{ OneVideo.pk }}/delete/">Delete</a>
     <a href="/my_app/{{ OneVideo.pk}}/get/">GET INFO</a>
 </body>
