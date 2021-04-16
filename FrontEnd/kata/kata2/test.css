@@ -1,0 +1,38 @@
+body {
+    height:100vh;
+    display:grid;
+    place-content:center;
+}
+
+.frame {
+    @w:3;
+    @h:4;
+    @n:3;
+    @nCell:@w*@h*@n*@n;
+    width:60vmin;
+    height:$width/(@w/@h);
+    background:pink;
+    display:grid;
+    grid-template-columns:repeat(@w * @n, 1fr);
+    grid-template-rows:repeat(@h * @n, 1fr);
+    .cell {
+        width:calc(100% + 0.5px);
+        height:calc(100% + 0.5px);
+        background-image:var(--img);
+        background-size:percentage(@w * @n) percentage(@h * @n);
+        each(range(@nCell), {
+            &:nth-of-type(@{value}) {
+                background-position: 
+                    -1 * percentage(mod(@value - 1, @w * @n)) // toward inlinestart
+                    -1 * percentage(floor((@value - 1)/(@w *@n))); // toward blockstart
+                transform: rotate(unit(`(Math.random()*8*(Math.random()-0.5)|0 + 1)*0.25`, turn));
+                transition: all unit(`1 + Math.random()`, s);
+            }
+        })
+    }
+    &:hover {
+        .cell {
+            transform:rotate(0);
+        }
+    }
+}

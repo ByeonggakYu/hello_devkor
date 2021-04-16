@@ -1,0 +1,9 @@
+.container {
+    background: red;
+    width:100%;
+    height:1000px;
+}
+
+#nav_logo {
+    text-align: center;
+}

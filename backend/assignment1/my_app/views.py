@@ -4,8 +4,9 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.views import View
+from django.utils import timezone
 
-from .models import Video
+from .models import Video, comment
 from django.shortcuts import render, get_object_or_404, redirect
 # Create your views here.
 
@@ -45,7 +46,11 @@ def detail(request, Video_id):
     context = {'OneVideo':OneVideo}
     return render(request, 'my_app/Video_detail.html', context)
     
-
+def comment_create(request, Video_id):
+    video = get_object_or_404(Video, pk=Video_id)
+    new_comment = comment(subject=video, content=request.POST.get('content'), create_date=timezone.now())
+    new_comment.save()
+    return redirect('my_app:detail', Video_id=video.id)
 
 """
 @api_view(['GET','POST'])

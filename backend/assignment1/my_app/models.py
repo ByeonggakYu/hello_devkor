@@ -12,7 +12,10 @@ class Video(models.Model):
 
 class comment(models.Model):
     subject = models.ForeignKey(Video, on_delete=models.CASCADE)
-    like = models.IntegerField(default=0)
+    content = models.TextField()
     create_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.subject.subject
 
     

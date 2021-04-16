@@ -5,6 +5,6 @@ def forward(x):
     return x * w;
 
 def loss(x, y):
-    y_pred = forward(x)
+    y_pred = forward(x)111
     return (y_pred - y) * (y_pred - y)
 

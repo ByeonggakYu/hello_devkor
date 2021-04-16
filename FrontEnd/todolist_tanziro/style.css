@@ -7,3 +7,14 @@ body, html {
     background: #fdf8ed;
     height: 100%;
 }
+
+.btm_image{
+    width: 100px;
+    height: 100px;
+}
+
+.video {
+    background:url(./action5.gif) repeat;
+    height: 500px;
+    width: auto;
+}

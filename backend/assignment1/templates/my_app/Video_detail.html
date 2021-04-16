@@ -1,12 +1,29 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 {% if OneVideo %}
 <body>
-    <h1>Video Detail</h1>
-    <h2>Subject : </h2>
-    <p>Content : <p>
+    <p>Video Detail<p>
+    <h2>Subject : {{OneVideo.subject}} </h2>
+    <h2>Content : {{OneVideo.content}} </h2>
     <a href="/my_app/">List</a>
-    <a href="{% url 'edit' OneVideo.pk %}">Edit</a>
-    <a href="/my_app/{{ OneVideo.pk }}/delete/">Delete</a>
-    <a href="/my_app/{{ OneVideo.pk}}/get/">GET INFO</a>
+    <a href="{% url 'my_app:edit' OneVideo.pk %}">Edit</a>
+    <a href="{% url 'my_app:delete' OneVideo.pk %}">Delete</a>
+    <a href="{% url 'my_app:get' OneVideo.pk %}">GET INFO</a>
+
+    <h5>{{ OneVideo.comment_set.count }} 개의 답변이 있습니다.</h5>
+    <div>
+        <ul>
+        {% for comment in OneVideo.comment_set.all %}
+            <li>{{ comment.content }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <form action ="{% url 'my_app:comment_create' OneVideo.id %}" method="POST">
+    {% csrf_token %}
+    <textarea name="content" id="content" row="15"></textarea>
+    <input type="submit" value="답변등록">
+    </form>
 </body>
 
 {% else %}
