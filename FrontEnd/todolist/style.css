@@ -1,0 +1,73 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+}
+
+.less_box {
+    height: 100%;
+    width:15%;
+    background: green;
+    display: flex;
+    align-items: center;
+}
+
+.content_box {
+    height: 100%;
+    width: 70%;
+    background: yellowgreen;
+}
+
+.more_box {
+    height: 100%;
+    width: 15%;
+    background: goldenrod;
+    align-items: center;
+    display: flex;
+}
+
+.title {
+    height:15%;
+    width: 100%;
+    background: lime;
+}
+
+.content {
+    height: 70%;
+    width: 100%;
+    background: olive;
+}
+
+.footer {
+    height: 15%;
+    width: 100%;
+    background: orange;
+}
+
+#less_button {
+    font-size: 35px;
+    transform: rotate(270deg);
+    display: inline;
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    outline: none;
+    margin-right:auto;
+}
+
+#more_button {
+    font-size: 35px;
+    transform: rotate(90deg);
+    display: inline;
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    outline: none;
+    margin-left: auto;
+}
