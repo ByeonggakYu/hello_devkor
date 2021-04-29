@@ -6,33 +6,39 @@ body, html {
 .container {
     height: 100%;
     display: flex;
+    position: absolute;
 }
+
 
 .less_box {
     height: 100%;
     width:15%;
-    background: green;
+    
     display: flex;
     align-items: center;
+
 }
 
 .content_box {
     height: 100%;
     width: 70%;
+
 }
 
 .more_box {
     height: 100%;
     width: 15%;
-    background: goldenrod;
+    
     align-items: center;
     display: flex;
+  
 }
 
 .title {
     height:15%;
     width: 100%;
-    background: lime;
+
+    
 }
 
 .content {
@@ -47,7 +53,6 @@ body, html {
 .footer {
     height: 15%;
     width: 100%;
-    background: orange;
 }
 
 #less_button {
@@ -75,7 +80,6 @@ body, html {
 }
 
 .empty {
-    border: solid 1px black;
     width: 12vw;
     height: 9vw;
     display: inline-block;
@@ -91,6 +95,18 @@ body, html {
     margin-top: 0.5vw;
     margin-left: 2vw;
     cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 3px 3px 2px black;
+}
+
+/* drag & drop */
+
+.hold {
+    border: solid white 3px;
+}
+
+.invisible {
+    visibility: hidden;
 }
 
 /*  clock */
@@ -101,4 +117,8 @@ body, html {
 
 #clock {
     margin-left: 30vw;
+}
+
+.hovered {
+    border-right: dashed 2px rgb(65, 63, 63);
 }
