@@ -56,7 +56,7 @@ body, html {
 }
 
 #less_button {
-    font-size: 35px;
+    font-size: 50px;
     transform: rotate(270deg);
     display: inline;
     vertical-align: middle;
@@ -65,10 +65,11 @@ body, html {
     cursor:pointer;
     outline: none;
     margin-right:auto;
+    font-family: 'Playfair Display', serif;
 }
 
 #more_button {
-    font-size: 35px;
+    font-size: 50px;
     transform: rotate(90deg);
     display: inline;
     vertical-align: middle;
@@ -77,6 +78,7 @@ body, html {
     cursor:pointer;
     outline: none;
     margin-left: auto;
+    font-family: 'Playfair Display', serif;
 }
 
 .empty {
@@ -119,6 +121,10 @@ body, html {
     margin-left: 30vw;
 }
 
-.hovered {
+.Lhovered {
     border-right: dashed 2px rgb(65, 63, 63);
+}
+
+.Mhovered {
+    border-left: dashed 2px rgb(65, 63, 63);
 }

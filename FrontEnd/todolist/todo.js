@@ -36,14 +36,8 @@ function clickLessButton()
         {
             var temp = empty;
         }
-        else if (!is_filled[empty.id] && temp)
-        {
-            undisplay_Object(temp);
-            is_filled[temp.id] = 0;
-            break;
-        }
     }
-    if (temp.id == 15)
+    if (empty.id == 15)
     {
         undisplay_Object(temp);
         is_filled[temp.id] = 0;
@@ -78,30 +72,54 @@ function dragEnd() {
     this.className = 'fill';
 }
 
-//
+//////////////less box///////////////////////////////////
 
-less_box.addEventListener('dragover', dragOver);
-less_box.addEventListener('dragenter', dragEnter);
-less_box.addEventListener('dragleave', dragLeave);
-less_box.addEventListener('drop', dragDrop);
+less_box.addEventListener('dragover', LdragOver);
+less_box.addEventListener('dragenter', LdragEnter);
+less_box.addEventListener('dragleave', LdragLeave);
+less_box.addEventListener('drop', LdragDrop);
 
-function dragOver(e) {
+function LdragOver(e) {
     e.preventDefault();    
 }
 
-function dragEnter(e) {
+function LdragEnter(e) {
     e.preventDefault();
-    this.className += ' hovered';
+    this.className += ' Lhovered';
 }
 
-function dragLeave() {
+function LdragLeave() {
     this.className = 'less_box';
 }
 
-function dragDrop() {
+function LdragDrop() {
     this.className = 'less_box';
     const ance = dragged.parentNode;
     const id = ance.id;
     is_filled[id] = 0;
     ance.style.visibility="hidden"; 
+}
+
+//////////////more box///////////////////////////////////
+more_box.addEventListener('dragover', MdragOver);
+more_box.addEventListener('dragenter', MdragEnter);
+more_box.addEventListener('dragleave', MdragLeave);
+more_box.addEventListener('drop', MdragDrop);
+
+function MdragOver(e) {
+    e.preventDefault();
+}
+
+function MdragEnter(e) {
+    e.preventDefault();
+    this.className += ' Mhovered';
+}
+
+function MdragLeave() {
+    this.className = 'more_box';
+}
+
+function MdragDrop() {
+    this.className = 'more_box';
+    clickMoreButton()
 }
