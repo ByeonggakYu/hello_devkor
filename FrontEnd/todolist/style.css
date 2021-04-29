@@ -19,7 +19,6 @@ body, html {
 .content_box {
     height: 100%;
     width: 70%;
-    background: yellowgreen;
 }
 
 .more_box {
@@ -39,7 +38,10 @@ body, html {
 .content {
     height: 70%;
     width: 100%;
-    background: olive;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .footer {
@@ -70,4 +72,33 @@ body, html {
     cursor:pointer;
     outline: none;
     margin-left: auto;
+}
+
+.empty {
+    border: solid 1px black;
+    width: 12vw;
+    height: 9vw;
+    display: inline-block;
+    object-position: center;
+    visibility: hidden;
+}
+
+.fill {
+    width: 8vw;
+    height: 8vw;
+    object-fit: cover;
+    background-image: url('http://source.unsplash.com/random/150x150');
+    margin-top: 0.5vw;
+    margin-left: 2vw;
+    cursor: pointer;
+}
+
+/*  clock */
+.title {
+    display: flex;
+    align-items: center;
+}
+
+#clock {
+    margin-left: 30vw;
 }
