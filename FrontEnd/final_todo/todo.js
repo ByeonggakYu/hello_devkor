@@ -1,7 +1,9 @@
 var more_button = document.getElementById("more_button");
 var less_button = document.getElementById("less_button");
+var change_button = document.getElementById("change_button");
+var clear_button = document.getElementById("clear_button");
 var dragged;
-
+var color = -1;
 const fill = document.querySelectorAll('[class~="fill"]');
 
 /// color change
@@ -12,43 +14,58 @@ let R;
 let G;
 let B;
 
-function setColor() {
-    const date = new Date();
-    const hours = date.getHours();
-    let setter;
-
-    if (0 <= hours && hours < 23) {
-        R = 255;
-        G = 150;
-        B = 150;
-        setter = "red";
-    } else {
+function changeColor() {
+    color++;
+    if (color % 3 === 1) {
         R = 150;
         G = 150;
         B = 255;
         setter = "blue";
     }
-    console.log(hours);
-    console.log(setter);
+    else if (color % 3 === 2) {
+        R = 150;
+        G = 255;
+        B = 150;
+        setter = "green";
+    }
+    else if (color % 3 === 0) {
+        R = 255;
+        G = 150;
+        B = 150;
+        setter = "red";
+    }
     for (let i = 0; i < fill.length; i++) {
         fill[i].style.backgroundColor = "rgb(" + R + "," + G + "," + B + ")";
         if (setter === "red") {
             G -= 10;
             B -= 10;
-        } else {
+        } 
+        else if (setter =="blue") 
+        {
             R -= 10;
             G -= 10;
         }
+        else
+        {
+            R -= 10;
+            B -= 10;
+        }
     }
 }
-//
-setColor();
+changeColor();
+change_button.addEventListener("click", changeColor);
+
+
+
 
 const less_box = document.querySelector(".less_box");
 const more_box = document.querySelector(".more_box");
 
 var empties = document.querySelectorAll(".empty");
 var is_filled = new Array(16);
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////
 // click More & Less Buttons;
@@ -87,6 +104,22 @@ function undisplay_Object(empty) {
     localStorage.removeItem('todo' + Object_id);
 }
 ///////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////clear button//////////////
+
+//////////////clear button//////////////////
+
+function clearAll()
+{
+    for (var k = 0; k <15; k++)
+    {
+        clickLessButton();
+    } 
+}
+
+clear_button.addEventListener("click", clearAll);
+
+
 
 //drag and drop
 
@@ -213,25 +246,18 @@ function submitOnEnter(event) {
 }
 
 var todos = document.querySelectorAll(".todo")
-function autosave() {
-    for (var todo of todos) {
-        console.log(todo)
 
-    }
-}
-/**
- * @param {Array} todos
- */
-Array.forEach(qwe)
-function qwe(value,i,array)
-{
-    console.log(value)
-}
+
+
 todos.forEach((todo, i) => {
     console.log(todo.value)
     todo.addEventListener("input", (e) => {
         const value=e.target.value;
         localStorage.setItem('todo' + todo.id, JSON.stringify(value));
+        if (!value)
+        {
+            localStorage.removeItem('todo' + todo.id);
+        }
     })
     
 })
