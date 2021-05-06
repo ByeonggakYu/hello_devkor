@@ -1,0 +1,174 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    position: absolute;
+}
+
+
+.less_box {
+    height: 100%;
+    width:15%;
+    
+    display: flex;
+    align-items: center;
+
+}
+
+.content_box {
+    height: 100%;
+    width: 70%;
+
+}
+
+.more_box {
+    height: 100%;
+    width: 15%;
+    
+    align-items: center;
+    display: flex;
+  
+}
+
+.title {
+    height:15%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+
+    
+}
+
+.content {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.footer {
+    height: 15%;
+    width: 100%;
+}
+
+#less_button {
+    font-size: 50px;
+    transform: rotate(270deg);
+    display: inline;
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    outline: none;
+    margin-right:auto;
+    font-family: 'Playfair Display', serif;
+}
+
+#more_button {
+    font-size: 50px;
+    transform: rotate(90deg);
+    display: inline;
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    outline: none;
+    margin-left: auto;
+    font-family: 'Playfair Display', serif;
+}
+
+.empty {
+    width: 12vw;
+    height: 9vw;
+    display: inline-block;
+    object-position: center;
+    visibility: hidden;
+}
+
+.fill {
+    width: 8vw;
+    height: 8vw;
+    margin-top: 0.5vw;
+    margin-left: 2vw;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.158);
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(47, 0, 255);
+    align-items: center;
+    display: inline-flex;
+}
+
+/* drag & drop */
+
+.hold {
+    border: solid white 3px;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+/*  clock */
+.title {
+    display: flex;
+    align-items: center;
+}
+
+#clock {
+    margin-left: 30vw;
+}
+
+.Lhovered {
+    border-right: dashed 2px rgb(65, 63, 63);
+}
+
+.Mhovered {
+    border-left: dashed 2px rgb(65, 63, 63);
+}
+
+/*.todo {
+    padding : 30px 10px;
+    color: rgb(255,196,196);
+    border: transparent;
+    border-radius: 100px;
+    border-radius: 0px;
+    outline: none;
+    font-size: 20px;
+    background-color: rgb(255,242,209);
+    width: 70vw;
+    <form class="form" >
+                        <p>
+                            <input type="text" value=''class="todo" name="todo" placeholder="" />
+                        </p>
+                    </form>
+}*/
+
+.todo {
+    margin: 1vw;
+    text-align: center;
+    width: 5.8vw;
+    border: none;
+    font-weight: 800;
+    font-size: 20px;
+    display: inline-block;
+    background: transparent;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    resize: none;
+    font-family: default;
+}
+
+.todo:hover{
+    overflow: visible;
+}
